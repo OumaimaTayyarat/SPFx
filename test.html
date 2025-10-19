@@ -27,8 +27,8 @@
         width: 110px;
         height: 95px;
         border-radius: 45%;
-        border: 3px solid #fff;
-        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        border: 3px solid #00a651;
+        box-shadow: 0 0 5px rgba(0, 102, 178, 0.7);
         animation: breathe-and-jump 3s linear infinite;
         cursor: pointer;
         z-index: 1;
@@ -56,8 +56,8 @@
         width: 20px;
         height: 25px;
         border-radius: 15px;
-        background-color: #fff;
-        box-shadow: 0 0 7px rgba(255, 255, 255, 0.7);
+        background-color: rgb(107, 114, 128) /* très clair */;
+        box-shadow: 0 0 7px rgb(107, 114, 128);
         animation: blink 5s linear infinite;
       }
       .felix > .eyes > .eye.left {
@@ -72,7 +72,7 @@
         transform: rotateX(70deg);
         width: 100px;
         height: 100px;
-        box-shadow: 0 0 100px #fff, 0 0 15px #fff inset;
+        box-shadow: 0 0 100px #00a651, 0 0 15px #00a651 inset;
         animation: jump-pulse 3s linear infinite;
       }
       .platform,
@@ -88,7 +88,7 @@
         width: 65px;
         height: 65px;
         transform: translate(-50%) rotateX(70deg);
-        box-shadow: 0 0 50px #fff, 0 0 15px #fff inset;
+        box-shadow: 0 0 50px #00a651, 0 0 15px #00a651 inset;
       }
 
       /* Hover */
@@ -149,11 +149,10 @@
         line-height: 37px;
         font-size: 25px;
         border-radius: 50%;
-        /* border: 2px solid #fff;
-        box-shadow: 0 0 5px #fff; */
         margin: 10px 12px;
         cursor: pointer;
         opacity: 0;
+        color: #00a651;
       }
       .felix.active ~ .command-list > li {
         display: inline-block;
@@ -222,7 +221,7 @@
         text-align: center;
         white-space: nowrap;
         background-color: none;
-        color: #c3bdbd;
+        color: #333;
         padding: 5px 15px;
         border-radius: 5px;
       }
@@ -238,7 +237,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        background-color: #000c;
+        background-color: #0008;
         z-index: -1;
         opacity: 0;
         transition: opacity 0.3s;
@@ -262,11 +261,12 @@
         height: 50px;
         font-size: 25px;
         line-height: 45px;
-        border: 2px solid #fff;
+        border: 2px solid #00a651;
         border-radius: 50%;
         cursor: pointer;
-        box-shadow: 0 0 10px #fff, 0 0 5px #fff inset;
+        box-shadow: 0 0 10px #00a651, 0 0 5px #00a651 inset;
         transition: 0.3s linear all;
+        color: #00a651;
       }
       .response-frame > .fas:hover {
         border: 2px solid #f55;
@@ -411,7 +411,7 @@
         40%,
         80%,
         100% {
-          border-color: #fff;
+          border-color: #000;
         }
       }
       @keyframes deactivate-platform {
@@ -421,7 +421,7 @@
         40%,
         80%,
         100% {
-          box-shadow: 0 0 15px #fff, 0 0 15px #fff inset;
+          box-shadow: 0 0 15px #000, 0 0 15px #000 inset;
         }
         20%,
         60% {
@@ -436,17 +436,26 @@
         padding: 0;
         min-height: 100vh;
         overflow: hidden;
-        background: rgb(31, 41, 55);
-        background-image: linear-gradient(
-          to top,
-          rgb(31, 41, 55),
-          rgb(55, 65, 81),
-          rgb(75, 85, 99),
-          rgb(107, 114, 128)
-        );
-        color: #fff;
+        background-color: #fff;
+        background-image: url("Experiments__1_-removebg-preview.png");
+        background-size: 50px 50px;
+        background-repeat: repeat;
+        background-attachment: fixed;
+        color: #00a651;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Helvetica Neue", Arial, sans-serif;
+        filter: blur(0px);
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.92);
+        z-index: -1;
+        pointer-events: none;
       }
       * {
         user-select: none;
@@ -454,7 +463,6 @@
 
       #primary-content {
         text-align: center;
-        /* padding: 50px 20px; */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -465,10 +473,12 @@
         font-size: 4rem;
         font-weight: 700;
         margin-bottom: 20px;
+        color: #00a651;
       }
       .lead {
         font-size: 1.25rem;
         font-weight: 300;
+        color: rgb(31, 41, 55);
       }
 
       /* 3D Logos */
@@ -485,6 +495,41 @@
       .logo-3d.right {
         top: 0px;
         right: 0px;
+      }
+      /* Footer Message */
+      .footer-message {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        text-align: center;
+      }
+
+      .footer-message p {
+        margin: 0;
+        font-size: 0.9rem;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        color: rgb(107, 114, 128);
+        font-style: italic;
+        text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+        animation: fade-in-slow 2s ease-in-out;
+      }
+
+      .footer-message i {
+        color: #1e1c1c;
+        margin: 0 3px;
+        font-size: 0.7rem;
+      }
+
+      @keyframes fade-in-slow {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
       }
 
       @media (max-width: 768px) {
@@ -539,6 +584,9 @@
           <li><i class="far fa-envelope" onclick="showRegistration();"></i></li>
           <p class="hey-felix lead"></p>
         </ul>
+      </div>
+      <div class="footer-message">
+        <p>Made with innovation <i class="fas fa-heart"></i>SIANA/PM</p>
       </div>
       <div id="response-frame" class="response-frame">
         <p id="response-message" class="lead"></p>
@@ -742,7 +790,7 @@
         });
       }
 
-      // Initialize 3D logos - Remplacez par vos chemins GLB
+      // Initialize 3D logos
       setup3DLogo("logo-left", "logoglb.glb");
       setup3DLogo("logo-right", "oncfLOGO.glb");
     </script>
