@@ -202,7 +202,7 @@
         transform: translateX(-100px) translateY(45px);
       }
       .command-list > li:nth-child(6):hover ~ .hey-felix::after {
-        content: " S'inscrire maintenant";
+        content: " Message du jour";
       }
 
       /* Hey Felix */
@@ -678,7 +678,28 @@
           "• Innovateur<br>" +
           "• Pionnier<br>" +
           "• Courageous Mindset<br><br>" +
-          "Devenez Leader de l'Expérimentation ET gagnez tous les badges !" +
+          "Devenez Leader de l'Expérimentation ET gagnez tous les badges !<br><br>" +
+          "<div style='text-align: center;'>" +
+          "<button onclick=\"window.open('https://forms.office.com/pages/responsepage.aspx?id=uS7M5CZtIEe-omTVz4RupynJW0tQeydBrWQcxvsoh4VUMzBSWkxXODBYTElWSTBNUFAzUTlBUEJFMS4u&route=shorturl', '_blank')\" " +
+          "style='background: linear-gradient(135deg, #e37222 0%, #ff9a4d 100%); " +
+          "color: white; " +
+          "border: none; " +
+          "padding: 12px 30px; " +
+          "font-size: 0.8em; " +
+          "font-weight: bold; " +
+          "border-radius: 25px; " +
+          "cursor: pointer; " +
+          "box-shadow: 0 4px 15px rgba(227, 114, 34, 0.3); " +
+          "transition: all 0.3s ease; " +
+          "text-transform: uppercase; " +
+          "letter-spacing: 0.5px;' " +
+          "onmouseover=\"this.style.boxShadow='0 6px 20px rgba(227, 114, 34, 0.5)'; this.style.transform='translateY(-2px)';\" " +
+          "onmouseout=\"this.style.boxShadow='0 4px 15px rgba(227, 114, 34, 0.3)'; this.style.transform='translateY(0)';\" " +
+          "onmousedown=\"this.style.transform='translateY(1px)';\" " +
+          "onmouseup=\"this.style.transform='translateY(-2px)';\">" +
+          "Soumettre mon expérimentation" +
+          "</button>" +
+          "</div>" +
           "</div></div>";
         showResponse();
       }
@@ -696,15 +717,17 @@
 
       function showRegistration() {
         responseMessage.innerHTML =
-          "<div style='position: relative; background-color: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 10px;'>" +
-          "<strong style='font-size: 1.3em; display: block; margin-bottom: 15px; color: #00a651;'>Inscription</strong>" +
-          "<div style='text-align: left; line-height: 1.8;'>" +
-          "Inscrivez-vous dès maintenant pour participer à cet événement exceptionnel !<br><br>" +
-          "<a href='https://forms.office.com/pages/responsepage.aspx?id=uS7M5CZtIEe-omTVz4RupynJW0tQeydBrWQcxvsoh4VUMzBSWkxXODBYTElWSTBNUFAzUTlBUEJFMS4u&route=shorturl' target='_blank' style='color: #e37222; font-weight: bold; text-decoration: underline;'>Soumettre mon inscription</a><br><br>" +
+          "<div style='position: relative; background-color: rgba(255, 255, 255, 0.8); padding: 25px; border-radius: 12px;'>" +
+          "<strong style='font-size: 1.4em; display: block; margin-bottom: 15px; color: #00a651;'>Message du jour</strong>" +
+          "<div style='text-align: left; line-height: 1.9; font-size: 1.1em; font-style: italic; color: #333;'>" +
+          "“Le meilleur moyen de prédire l’avenir, c’est de le créer.”" +
+          '<span style=\'display:block; margin-top:10px; text-align:right; font-weight:300; font-style:italic; font-family: "Times New Roman", "Georgia", serif; color:#555;\'>— Peter Drucker</span>' +
+          "</div>" +
           "À très bientôt à SIANA !" +
-          "</div></div>";
+          "</div>";
         showResponse();
       }
+
       function showResponse() {
         responseFrame.classList.add("active");
         deactivateFelix();
